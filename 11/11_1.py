@@ -18,7 +18,7 @@ class Student(Person):
 
     def __str__(self):
         return self.person_name + ' ' + self.person_sex + ' ' + self.student_lvl
-
+ 
 class Teacher(Person):
     def __init__(self, person_name, person_sex, teacher_zarplata):
         super.__init__(person_name, person_sex)
