@@ -13,9 +13,12 @@ class Cat(Animal):
     def Talk(self):
         print('meow')
 
-Animals=[Cat('Bars'),Dog('Kroha'),Cat('Simon')]
-
-for x in Animals:
-    x.Talk()
+def foo(Cat,Dog):
+    kot = Cat(input('Введите кличку кота: '))
+    kot.Talk()
+    sob = Dog(input('Введите кличку собаки: '))
+    sob.Talk()
+    
+foo(Cat,Dog)
 
 
