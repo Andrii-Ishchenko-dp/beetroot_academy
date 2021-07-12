@@ -1,5 +1,6 @@
 import time
 import random
+from dungeon import dungeon1
 
 try:
     print('Эта история начинает с подземелья, выберите свой путь.', end='\n')
@@ -16,7 +17,7 @@ try:
             'strong': random.randint(7,11),
             'intel': random.randint(2,6),
             'dexterity': random.randint(4,8),
-            'flair': random.randint(0,8)
+            'flair': random.randint(0,6)
         }
         efficiency = skill['strong'] + skill['intel'] + skill['dexterity'] + skill['flair']
     elif hero == 'м':
@@ -24,7 +25,7 @@ try:
             'strong': random.randint(2, 6),
             'intel': random.randint(7, 11),
             'dexterity': random.randint(4, 8),
-            'flair': random.randint(0, 8),
+            'flair': random.randint(0, 6),
         }
         efficiency = skill['strong'] + skill['intel'] + skill['dexterity'] + skill['flair']
     else:
@@ -32,11 +33,11 @@ try:
             'strong': random.randint(4, 10),
             'intel': random.randint(4, 10),
             'dexterity': random.randint(4, 10),
-            'flair': random.randint(0, 8),
+            'flair': random.randint(0, 6),
         }
         efficiency = skill['strong'] + skill['intel'] + skill['dexterity'] + skill['flair']
 
-    print('Вы спускаетесь по тёмным каридорам подземелья, факел в вашей руке отбрасывает причудливые тени на камменные стены.\n '
+    print('Вы спускаетесь по тёмным каридорам подземелья, факел в вашей руке отбрасывает причудливые тени на камменные стены.\n'
           '"Эх, сейчас бы найти укромное местечно и отдохнуть", - думаете вы')
     print('Тоннель перед вами расширяется и вы выходите на небольшую площадку.')
     time.sleep(2)
@@ -180,7 +181,7 @@ try:
               'но из котекста вы понимаете, что речь идёт о каком-то качестве героя. Какими качествами обладают герои?')
     x=random.sample(word, k=len(word))
     string=''.join(x)
-    tuple(string)
+    dict(string)
     print(f'Собрав все буквы в руки, вы получили следующее:{string}')
     print('Теперь вам нужно из полученных букв составить слово')
     while True:
@@ -192,7 +193,7 @@ try:
             print('Вы вставляете буквы в пазы, вы слышите, как за стенами начинают крутиться шестерёнки и уже в слеюущее\n'
                   'мгновение пол под вами раздвигается и вы падаете в бездну')
             raise TypeError
-
+    dungeon1(skill, efficiency, hero)
     print('Путешествие продолжается...')
 
 
